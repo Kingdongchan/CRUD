@@ -18,11 +18,11 @@ while True:
     elif user_input == "목록":
         print("--현재 들어있는 조언 게시물 목록들 입니다.--")
         for z in exercise_reason:
-            print(exercise_reason) 
+            print(f"{z["번호"]}. {z["조언"]} - {z["작성자"]}") 
         #목록 나열하기
     # 추가 선택
     elif user_input == "추가":
-        user_input_reason= input("내용: ")
+        user_input_reason = input("내용: ")
         user_input_name = input("작성자: ")
         #입력한 것들을 목록에 넣기
         def add_reason(user_input_reason, user_input_name):
@@ -30,7 +30,8 @@ while True:
             
             exercise_reason.append(list_reason)
             print("---등록 완료---")
-
+        # 추가 실행 위치 설정 
+        add_reason(user_input_reason, user_input_name)
     # 삭제 선택
     elif user_input == "삭제":
             reason_number = len(exercise_reason)+1
