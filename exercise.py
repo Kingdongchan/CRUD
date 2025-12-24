@@ -55,15 +55,15 @@ while True:
     elif user_input == "수정":
         reason_number = len(exercise_reason)+1
             #목록 불러오기
-        for j in range(len(exercise_reason)):
-            print(f"-{reason_number}.", exercise_reason)
-            
+        for j in exercise_reason:
+            print(f"-{j["번호"]}. {j["조언"]}")
+        
         user_choose_number = int(input("수정할 게시물의 번호: "))
         #운동 조언 목록 가져오기
         for i in range(len(exercise_reason)):
             exercise_number = exercise_reason[i]
-            # 유저가 고른 번호와 맞는지 확인
-            if user_choose_number == exercise_number:
+
+            if user_choose_number == exercise_number["번호"]:
                 #수정
                 user_repost = input("수정 할 내용: ")
                 exercise_reason[i]["조언"] = user_repost
