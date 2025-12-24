@@ -17,8 +17,9 @@ while True:
     #목록 선택
     elif user_input == "목록":
         print("--현재 들어있는 조언 게시물 목록들 입니다.--")
-        print(exercise_reason) 
-
+        for z in exercise_reason:
+            print(exercise_reason) 
+        #목록 나열하기
     # 추가 선택
     elif user_input == "추가":
         user_input_reason= input("내용: ")
