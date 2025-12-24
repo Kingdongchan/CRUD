@@ -2,12 +2,12 @@
 
 exercise_reason = []
 
-def write_reason(reason, wirter):
-    add_reaon = f"{reason} - {wirter}"
-    exercise_reason.append(add_reaon)
-    
+# 사용자가 원하는 행동
+user_input = input("(목록)/(추가)/(삭제)/(수정)")
 
-def watch_reason():
-    print("--현재 들어 있는 이유--")
-    print(exercise_reason)
+#목록을 원한다면
 
+
+if user_input == "목록":
+    print("현재 들어있는 조언 목록들입니다.")
+    print(exercise_reason) 
