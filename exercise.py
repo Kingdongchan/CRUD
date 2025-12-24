@@ -82,6 +82,8 @@ while True:
                 
                 while True: 
                     if password_input == exercise_password:
+                        if password_input == end_:
+                            print(f"{end_}하겠습니다.")
 
                     # 목록에 잇는 것들 나열 후 사용자의 입력과 맞는지 비교 후 삭제하기
                         if user_choose_number == exercise_number[num_]:
@@ -89,11 +91,8 @@ while True:
 
                             print(f"{user_choose_number}번 {del_} 완료")
                             break
-                    #비밀번호의 종료를 원한다면
-                    elif password_input == end_:
-                        print(f"{end_}합니다.")
-                        break    
-                    # 다시입력
-                    else:
-                        print("다시 입력해주세요.")
-                        break
+                        
+                        else:
+                            print("다시 입력해주세요.")
+                            
+                            break
