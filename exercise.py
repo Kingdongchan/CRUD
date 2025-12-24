@@ -2,9 +2,12 @@
 
 exercise_reason = []
 
-def do_reason(reason, wirter):
+def write_reason(reason, wirter):
     add_reaon = f"{reason} - {wirter}"
     exercise_reason.append(add_reaon)
-    print("등록완료!")
+    
 
-do_reason("탈모예방효과","김동찬")
+def watch_reason():
+    print("--현재 들어 있는 이유--")
+    print(exercise_reason)
+
