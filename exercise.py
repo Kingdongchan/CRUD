@@ -2,6 +2,7 @@
 
 exercise_reason = []
 
+print("---운동 조언 게시판---")
 # 사용자가 원하는 행동
 user_input = input("(목록)/(추가)/(삭제)/(수정):")
 
