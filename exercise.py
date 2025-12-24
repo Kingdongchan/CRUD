@@ -5,28 +5,37 @@ exercise_reason = []
 print("---운동 조언 게시판---")
 # 사용자가 원하는 행동
 
+end_ = "종료"
+list_ = "목록"
+add_ = "추가"
+del_ = "삭제"
+modify_ = "수정"
+num_ = "번호"
+advice_ = "조언"
+writer_ = "작성자"
+
 #계속 작동할 수 있도록 추가
 while True:
-    user_input = input("(목록)/(추가)/(삭제)/(수정)/(종료):")
+    user_input = input(f"({list_})/({add_})/({del_})/({modify_})/({end_}):")
 
     #종료 선택
-    if user_input == "종료":
-        print("프로그램을 종료합니다.")
+    if user_input == end_:
+        print(f"프로그램을 {end_}합니다.")
         break
 
     #목록 선택
-    elif user_input == "목록":
-        print("--현재 들어있는 조언 게시물 목록들 입니다.--")
+    elif user_input == list_:
+        print(f"--현재 들어있는 {advice_} 게시물 {list_}들 입니다.--")
         for z in exercise_reason:
-            print(f"{z["번호"]}. {z["조언"]} - {z["작성자"]}") 
+            print(f"{z[num_]}. {z[advice_]} - {z[writer_]}") 
         #목록 나열하기
     # 추가 선택
-    elif user_input == "추가":
+    elif user_input == add_:
         user_input_reason = input("내용: ")
-        user_input_name = input("작성자: ")
+        user_input_name = input(f"{writer_}: ")
         #입력한 것들을 목록에 넣기
         def add_reason(user_input_reason, user_input_name):
-            list_reason = {"번호":len(exercise_reason)+ 1, "조언": user_input_reason, "작성자":user_input_name}
+            list_reason = {num_:len(exercise_reason)+ 1, advice_: user_input_reason, writer_:user_input_name}
             
             exercise_reason.append(list_reason)
             print("---등록 완료---")
@@ -34,36 +43,38 @@ while True:
         add_reason(user_input_reason, user_input_name)
         
     # 삭제 선택
-    elif user_input == "삭제":
+    elif user_input == del_:
             reason_number = len(exercise_reason)+1
             #목록 불러오기
             for j in exercise_reason:
-                print(f"-{j["번호"]}. {j["조언"]}")
+                print(f"-{j[num_]}. {j[advice_]}")
             
-            user_choose_number = int(input("삭제할 게시물의 번호: "))
+            user_choose_number = int(input(f"{del_}할 게시물의 {num_}: "))
             
             # 목록에 있는 것들 나열하기
             for i in range(len(exercise_reason)):
                 exercise_number = exercise_reason[i]
                 # 목록에 잇는 것들 나열 후 사용자의 입력과 맞는지 비교 후 삭제하기
-                if user_choose_number == exercise_number["번호"]:
+                if user_choose_number == exercise_number[num_]:
                     del exercise_reason[i]
 
-                    print(f"{user_choose_number}번 삭제 완료")
+                    print(f"{user_choose_number}번 {del_} 완료")
 
     # 수정 선택
-    elif user_input == "수정":
+    elif user_input == modify_:
         reason_number = len(exercise_reason)+1
             #목록 불러오기
         for j in exercise_reason:
-            print(f"-{j["번호"]}. {j["조언"]}")
+            print(f"-{j[num_]}. {j[advice_]}")
         
-        user_choose_number = int(input("수정할 게시물의 번호: "))
+        user_choose_number = int(input(f"{modify_}할 게시물의 {num_}: "))
         #운동 조언 목록 가져오기
         for i in range(len(exercise_reason)):
             exercise_number = exercise_reason[i]
 
-            if user_choose_number == exercise_number["번호"]:
+            if user_choose_number == exercise_number[num_]:
                 #수정
-                user_repost = input("수정 할 내용: ")
-                exercise_reason[i]["조언"] = user_repost
+                user_repost = input(f"{modify_} 할 내용: ")
+                exercise_reason[i][advice_] = user_repost
+                
+                print(f"{modify_} 완료 했습니다.")
