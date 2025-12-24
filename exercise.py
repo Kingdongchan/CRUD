@@ -35,5 +35,5 @@ elif user_input == "삭제":
 
                   print(f"{user_choose_number}번 삭제 완료")
 
-
+print(exercise_number)
     
