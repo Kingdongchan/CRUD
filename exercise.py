@@ -73,26 +73,29 @@ while True:
                 print(f"-{j[num_]}. {j[advice_]}")
             
             user_choose_number = int(input(f"{del_}할 게시물의 {num_}: "))
-            password_input = input(f"{del_}를 원한다면 {password_}를 입력하세요: ")
             #패스워드 판단
                 # 목록에 있는 것들 나열하기
             for i in range(len(exercise_reason)):
                 exercise_number = exercise_reason[i]
                 exercise_password = exercise_reason[i][password_]
                 
-                while True: 
-                    if password_input == exercise_password:
+                if user_choose_number == exercise_number[num_]:
+                    
+                    while True:
+                        password_input = input(f"{del_}를 원한다면 {password_}를 입력하세요: ")
+
                         if password_input == end_:
                             print(f"{end_}하겠습니다.")
-
-                    # 목록에 잇는 것들 나열 후 사용자의 입력과 맞는지 비교 후 삭제하기
-                        if user_choose_number == exercise_number[num_]:
+                            break
+                        
+                        # 목록에 잇는 것들 나열 후 사용자의 입력과 맞는지 비교 후 삭제하기
+                        if password_input == exercise_password:
                             del exercise_reason[i]
 
                             print(f"{user_choose_number}번 {del_} 완료")
                             break
-                        
+                            
                         else:
                             print("다시 입력해주세요.")
-                            
-                            break
+                                
+                    break
